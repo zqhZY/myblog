@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% for entry in entries %}
+
+
+	<div class="blog-post">
+            <h2 class="blog-post-title" ><a href="{{ url_for('show_entry', entry_id=entry.id) }}">{{ entry.title |safe }}</a></h2>
+            <p class="blog-post-meta">{{ entry.create_time.strftime("%B %d %Y")}} by <a href="{{url_for('about_display')}}">{{ entry.author |safe }}</a>  viewcount: {{entry.view_count}}</p>
+		 
+              {{ (entry.fragment)|safe }}...
+		
+	     <a class="button" href="{{ url_for('show_entry', entry_id=entry.id) }}">Read more >></a>
+            <ul>
+          </div><!-- /.blog-post -->
+  
+         <hr>
+	 
+
+{% endfor %}
+
+ 	  <nav>
+            <ul class="pager">
+              	{% if p.has_prev %}
+           <li><a href="{{ url_for('show_blog', page=p.prev_num) }}" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+	{% else %}
+	   <li><a href="#">上一页</a></li>
+	{% endif %}
+	{% for i in pagination %}
+		{% if i == page %}
+		<li class="active"><a href="#">{{ i }}<span class="sr-only">(current)</span></a></li>
+		{% else %}																
+		          			<li><a href="{{ url_for('show_blog', page=i) }}"> {{ i }}</a></li>
+																						 			{% endif %}
+																																        	{% endfor %}
+
+																																		        	{% if p.has_next %}
+																																				            		     <li><a href="{{ url_for('show_blog', page=p.next_num) }}" aria-hidden="next"><span aria-hidden="true">下一页</span>
+																																							        	{% else %}
+																																									            		     <li><a href="#">下一页</a></li>
+																																												        	{% endif %}
+																																														       		</a></li>
+            </ul>
+   </nav>
+
+
+{% endblock %}
+

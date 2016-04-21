@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/img/head2.png">
+
+    <title>JustLive`s Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/blog.css" rel="stylesheet">
+  
+    <script src="ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="{{url_for('show_blog')}}">主页</a>
+          <a class="blog-nav-item" href="{{url_for('all_category_display')}}">分类</a>
+          <a class="blog-nav-item" href="{{url_for('comment_display')}}">留言</a>
+          <a class="blog-nav-item" href="{{url_for('about_display')}}">关于</a>
+
+
+
+
+        </nav>
+      </div>
+    </div>
+
+    <div class="blog-header">
+
+	<div class="container">
+       <h1 class="blog-title">JustLive`s blog</h1>
+       <p class="lead blog-description">An IT dog's wangwang.</p>
+	</div>
+     </div>
+
+
+
+	<hr>
+	<hr>
+   
+    <div class="container">
+
+
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+	   
+		{% block content %}{% endblock %}
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>操蛋的日子里，抵制着来自全世界的恶魔，风华正茂的年纪下活着就好，保不准就活出人样了。</p>
+          </div>
+
+
+	<div class="sidebar-moduled">
+	
+
+          <div class="sidebar-module">
+            <h4>Categorys</h4>
+            <ol class="list-unstyled">
+		<hr>
+              
+              <li><a href="{{url_for('category_display' , category_id = 1)}}">Python</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 2)}}">C/C++</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 3)}}">数据结构与算法</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 4)}}">生活杂记</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 5)}}">Note</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 6)}}">转</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 7)}}">单片机</a></li><hr>
+              <li><a href="{{url_for('category_display' , category_id = 8)}}">Linux</a></li><hr>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="http://www.douban.com/group/flask/">GitHub</a></li>
+              <li><a href="http://www.douban.com/group/flask/">Flask小组</a></li>
+              <li><a href="http://www.douban.com/group/flask/">知乎</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog from <a href="{{url_for('about_display')}}">zqh</a> --新浪微博:<a href="http://weibo.com/2935361873/">justlive</a>.</p>
+      <p>
+	Copyright © 2012 - 2015
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="static//js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="ie10-viewport-bug-workaround.js"></script>
+
+    
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) erji yuming -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zhangqh"};
+   	 (function() {
+   	     var ds = document.createElement('script');
+    	    ds.type = 'text/javascript';ds.async = true;
+    	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    	    ds.charset = 'UTF-8';
+   	     (document.getElementsByTagName('head')[0]
+   	      || document.getElementsByTagName('body')[0]).appendChild(ds);
+   	 })();
+   	 </script>
+	<!-- 多说公共JS代码 end -->
+
+
+  </body>
+</html>

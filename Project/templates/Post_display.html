@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div id="mainbody">
+     
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      
+        <h2 class="c_titile" >{{ entry.title }}</h2>
+
+	<p class="box">{{entry.create_time.strftime("%B-%d-%Y")}}<span>  author:{{entry.author}}</span> viewcount:{{ entry.view_count }}</p>
+
+	<ul>
+        <p>{{ entry.body|safe}}</p>
+        </ul>
+
+ 
+
+      <div class="otherlink">
+        <h2>LinkArtical</h2>
+        <ul>
+          <li><a href="/newstalk/mood/2013-07-24/518.html" title="link">习近平眼中的中巴关系：铁杆朋友</a></li>
+          <li><a href="/newstalk/mood/2013-07-02/335.html" title="link">李克强敦促银行减少服务收费：能不收尽量不收</a></li>
+          <li><a href="/newstalk/mood/2013-07-01/329.html" title="link">李克强敦促银行减少服务收费：能不收尽量不收</a></li>
+          <li><a href="/news/read/2013-06-11/213.html" title="link">58同城未来隐忧：合并未带增量 选错腾讯靠山</a></li>
+         
+        </ul>
+      </div>
+
+
+	<div class="ds-share flat" data-thread-key="1" data-title="zqh" data-images="" data-content="zqh123" data-url="http://bugcoding.sinaapp.com/entry/zqh123">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      	
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="1" data-title="zqh" data-url="http://bugcoding.sinaapp.com/entry/1">
+
+</div>
+<!-- 多说评论框 end -->
+  
+</div>
+
+
+
+
+
+
+
+{% endblock%}

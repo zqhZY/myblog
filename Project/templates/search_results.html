@@ -1,0 +1,25 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Search results for "{{query}}":</h1>
+<hr>
+{% for post in results %}
+
+	
+	<div class="blog-post">
+            <h2 class="blog-post-title"><a href="{{ url_for('show_entry', entry_id=post.id) }}">{{ post.title |safe }}</a></h2>
+            <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+		 
+             {{ (post.fragment)|safe }}...
+		
+	     <a class="button" href="{{ url_for('show_entry', entry_id=post.id) }}">Read more >></a>
+            <ul>
+          </div><!-- /.blog-post -->
+  
+         <hr>
+ 	 
+		
+{% endfor %}
+
+{% endblock %}

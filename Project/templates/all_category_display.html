@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+{% block content%}
+
+{% for category in categorys%}
+	<h2> {{category.name}}</h2>
+
+	
+	<ul>
+		{% for list in range(0)  %}
+			<li><a href="{{url_for('show_entry' ,entry_id = category.posts[list].id )}}">{{category.posts[list].title}}</a></li>
+		<div>{{ (category.posts[list].fragment)|safe }}...</div>
+		{% endfor%}
+	</ul>
+
+	<div>
+		<div>
+			<a href="{{url_for('category_display' , category_id = category.id)}}">read more list under {{category.name}}</a>
+		</div>		
+	<hr><hr>
+
+	</div>
+{% endfor%}
+
+{% endblock%}
